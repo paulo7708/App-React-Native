@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Robot",
+    "slug": "Robot",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
