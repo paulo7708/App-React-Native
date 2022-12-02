@@ -16,7 +16,7 @@ export default function ExplanationCard() {
         />
         <Text style={styles.description}>
           <Text style={styles.mind}>
-            Mente: Hábitos para melhorar sua Espiritualidade/inteligência/Sabedoria.
+            Mente: Melhorar a Espiritualidade/inteligência.
           </Text>
         </Text>
       </View>
@@ -29,7 +29,7 @@ export default function ExplanationCard() {
         />
         <Text style={styles.description}>
           <Text style={styles.money}>
-            Financeiro: Hábitos para ter controle financeiro.
+            Financeiro: Controle seu Dinheiro.
           </Text>
         </Text>
       </View>
