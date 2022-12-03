@@ -1,9 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Alert } from "react-native";
+import SelectHabit from "./SelectHabit";
 
 export default function HabitPage( {route} ){
   const navigation = useNavigation();
+  const [habitInput, setHabitInput] = useState();
+  
   const { create, habit } = route.params;
 
   return (
@@ -22,8 +25,10 @@ export default function HabitPage( {route} ){
             <Text style={styles.title}>Configurações {"\n"} de hábito</Text>
             <Text style={styles.inputText}>Área</Text>
             <View style={styles.inputContainer}>
-              <Text style={styles.area}>{habit?.habitArea}</Text>
+              <Text style={styles.area}>{habit?.habitArea}</Text>              
             </View>
+            <Text style={styles.inputText}>Hábito</Text>
+            <SelectHabit habit={habit} habitInput={setHabitInput}/>
           </View>
         </View>
       </ScrollView>
@@ -46,7 +51,7 @@ const styles = StyleSheet.create({
     height: 40,
   },
   mainContent: {
-    width: 250,
+    width: 270,
     alignSelf: "center",
   },
   title: {
@@ -72,5 +77,6 @@ const styles = StyleSheet.create({
   area: {
     color: "#BBBBBB",
     fontSize: 15,
+    fontWeight: "bold",
   },
 })
