@@ -69,7 +69,7 @@ export default function Home() {
               checkColor="#FE7F23"
             />
           ) : (
-            <CreateHabit habitArea="Diversão" borderColor="#FE7F23"/>
+            <CreateHabit habitArea="Humor" borderColor="#FE7F23"/>
           )}
 
 

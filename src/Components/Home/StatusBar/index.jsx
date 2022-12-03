@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
     padding:20,
     backgroundColor: "#151515",
     borderRadius: 10,
-    marginTop: 10,
-    marginBottom:10,
+    marginTop: -20,
+    marginBottom:20,
   },
   StatusBarContainer:{
     flexDirection: "row",
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   progress:{
     borderRadius: 10,
-    width:250,
+    width:270,
     height: 8,    
   },
   icon: {

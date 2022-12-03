@@ -14,7 +14,7 @@ export default function CreateHabit({ habitArea, borderColor}) {
       onPress={handleCreate}
     >
       <Text style={styles.habitTitle}>
-        Adicionar meta {habitArea === "Mente" ? "da" : "do"} {habitArea}
+        Adicionar hábito {habitArea === "Mente" ? "da" : "do"} {habitArea}
       </Text>
     </TouchableOpacity>
   )
@@ -22,7 +22,7 @@ export default function CreateHabit({ habitArea, borderColor}) {
 
 const styles = StyleSheet.create({
   button: {
-    width:315,
+    width:300,
     marginVertical:5,
     paddingVertical:5,
     paddingHorizontal:10,
