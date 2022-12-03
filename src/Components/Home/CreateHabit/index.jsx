@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   habitTitle: {
     color:"white",
-    fontSize: 20,
+    fontSize: 16,
     fontweight:"bold",
   }
 })
