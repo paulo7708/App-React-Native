@@ -27,7 +27,6 @@ export default function Home() {
           <LifeStatus />
           <StatusBar />
 
-
           {mindHabit ? (
             <EditHabit
               habit={mindHabit?.habitName}
@@ -36,7 +35,7 @@ export default function Home() {
               checkColor="#90b7f3"
             />
           ) : (
-            <CreateHabit habitArea="Mente" borderColor="#90b7f3"/>
+            <CreateHabit habitArea="Mente" borderColor="#90b7f3" />
           )}
 
           {moneyHabit ? (
@@ -47,7 +46,7 @@ export default function Home() {
               checkColor="#85BB65"
             />
           ) : (
-            <CreateHabit habitArea="Financeiro" borderColor="#85BB65"/>
+            <CreateHabit habitArea="Financeiro" borderColor="#85BB65" />
           )}
 
           {bodyHabit ? (
@@ -58,7 +57,7 @@ export default function Home() {
               checkColor="#FF0044"
             />
           ) : (
-            <CreateHabit habitArea="Corpo" borderColor="#FF0044"/>
+            <CreateHabit habitArea="Corpo" borderColor="#FF0044" />
           )}
 
           {funHabit ? (
@@ -69,10 +68,8 @@ export default function Home() {
               checkColor="#FE7F23"
             />
           ) : (
-            <CreateHabit habitArea="Humor" borderColor="#FE7F23"/>
+            <CreateHabit habitArea="Humor" borderColor="#FE7F23" />
           )}
-
-
         </View>
         <Text
           style={styles.explanationText}
@@ -92,18 +89,18 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "rgba(21, 21, 21, 0.98)",
   },
-  dailyChecks:{
-    color:"white",
-    fontWeight:"bold",
-    textAlign:"center",
-    marginTop:40,
+  dailyChecks: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
+    marginTop: 40,
   },
   explanationText: {
-    color:"white",
-    fontSize:16,
-    fontWeight:"bold",
-    textAlign:"center",
-    paddingTop:15,
-    paddingBottom:25,
-  }
-})
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+    paddingTop: 15,
+    paddingBottom: 25,
+  },
+});

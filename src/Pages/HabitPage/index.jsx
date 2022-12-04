@@ -1,17 +1,28 @@
 import { useNavigation } from "@react-navigation/native";
-import React, { useEffect, useRef, useState, setHabitInput } from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView, Alert } from "react-native";
-import SelectFrequency from "../../Components/HabitPage/SelectFrequency";
+import React, { useEffect, useRef, useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+  Alert,
+} from "react-native";
+
 import SelectHabit from "../../Components/HabitPage/SelectHabit";
+import SelectFrequency from "../../Components/HabitPage/SelectFrequency";
 import Notification from "../../Components/HabitPage/Notification";
+import TimeDatePicker from "../../Components/HabitPage/TimeDataPicker";
 
-
-export default function HabitPage( {route} ){
+export default function HabitPage({ route }) {
   const navigation = useNavigation();
   const [habitInput, setHabitInput] = useState();
   const [frequencyInput, setFrequencyInput] = useState();
-  const [notificationToggle,setNotificationToggle] = useState();
-  
+  const [notificationToggle, setNotificationToggle] = useState();
+  const [dayNotification, setDayNotification] = useState();
+  const [timeNotification, setTimeNotification] = useState();
+
   const { create, habit } = route.params;
 
   return (
@@ -22,35 +33,40 @@ export default function HabitPage( {route} ){
             style={styles.backPageBtn}
             onPress={() => navigation.goBack()}
           >
-            <Image source={require("../../assets/icons/arrowBack.png")}
-            style={styles.arrowBack}
+            <Image
+              source={require("../../assets/icons/arrowBack.png")}
+              style={styles.arrowBack}
             />
           </TouchableOpacity>
           <View style={styles.mainContent}>
             <Text style={styles.title}>Configurações {"\n"} de hábito</Text>
             <Text style={styles.inputText}>Área</Text>
             <View style={styles.inputContainer}>
-              <Text style={styles.area}>{habit?.habitArea}</Text>              
+              <Text style={styles.area}>{habit?.habitArea}</Text>
             </View>
             <Text style={styles.inputText}>Hábito</Text>
-            <SelectHabit habit={habit} habitInput={setHabitInput}/>
+            <SelectHabit habit={habit} habitInput={setHabitInput} />
+            
             <Text style={styles.inputText}>Frequência</Text>
             <SelectFrequency
               habitFrequency={habit?.habitFrequency}
               frequencyInput={setFrequencyInput}
             />
+            
             {frequencyInput === "Mensal" ? null : (
               <Notification
                 notificationToggle={notificationToggle}
                 setNotificationToggle={setNotificationToggle}
               />
             )}
+
+            
           </View>
         </View>
       </ScrollView>
     </View>
-  )
-};
+  );
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -95,4 +111,4 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: "bold",
   },
-})
+});
